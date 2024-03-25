@@ -13,5 +13,10 @@ int main()
 	
 	albero1.stampa();
 	albero1.cerca(3);
+
+
+	//mostro i valori ripetuti:
+	cout << endl << "Valori ripetuti: " << endl;
+	albero1.mostraRipetuti();
 }
 

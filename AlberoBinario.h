@@ -31,6 +31,7 @@ public:
 	//funzione statica per riempire il file di testo da cui verranno prelevati i valori;
 	static void RiempiFile();
 	Nodo* getRoot();
+	void mostraRipetuti();
 
 };
 

@@ -17,7 +17,7 @@ void AlberoBinario::RiempiFile() {
 		int valori = (rand() % 11) + 3;//numero divalori totali nel file;
 		int x = 0;
 		for (int i = 0; i < valori; i++) {
-			x = rand() % 101;
+			x = rand() % 10;
 			listaOrdinata.push_back(x);//inserisco i valori generati in una lista;
 
 		}
@@ -144,4 +144,10 @@ void AlberoBinario::stampa() {
 
 Nodo* AlberoBinario::getRoot() {
 	return root;
+}
+
+void AlberoBinario::mostraRipetuti() {
+	for (int valore : ripetuti) {
+		cout << endl << valore << endl;
+	}
 }
