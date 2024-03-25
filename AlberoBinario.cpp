@@ -17,7 +17,7 @@ void AlberoBinario::RiempiFile() {
 		int valori = (rand() % 11) + 3;//numero divalori totali nel file;
 		int x = 0;
 		for (int i = 0; i < valori; i++) {
-			x = rand() % 10;
+			x = rand() % 101;
 			listaOrdinata.push_back(x);//inserisco i valori generati in una lista;
 
 		}
@@ -78,15 +78,27 @@ bool AlberoBinario::ricerca(Nodo* root, int valore) {
 
 void AlberoBinario::stampaOrdinata(Nodo* root)
 {
-	if (root != nullptr) {//se non ho raggiunto la finedell'albero
+		
+	ofstream file2("testo2.txt", ios::app);//apro lo stream in append;
+	if (root != nullptr) {//se non ho raggiunto la fine dell'albero
 		if (root->getSx() != nullptr) {
 			stampaOrdinata(root->getSx());
 		}
 		cout << endl<< root->getValore() << endl;
+		if (file2.is_open()) {
+				file2 << root->getValore() << endl;
+			}
+			else {
+				cout << "errore";
+			}
+			file2.close();
+		
 		if (root->getDx() != nullptr) {
 			stampaOrdinata(root->getDx());
 		}
 	}
+
+	
 }
 
 
@@ -118,8 +130,14 @@ void AlberoBinario::cerca(int valore)
 }
 
 void AlberoBinario::stampa() {
+	ofstream file2("testo2.txt");
+	file2.clear(); // svuoto il file ogni volta che richiamo la funzione
 	cout << endl << "Elementi presenti nell'albero: " << endl;
 	stampaOrdinata(root);
+	file2.close();
+	
+
+	
 }
 
 
