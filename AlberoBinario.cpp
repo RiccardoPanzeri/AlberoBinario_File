@@ -67,12 +67,12 @@ bool AlberoBinario::ricerca(Nodo* root, int valore) {
 		return true;//il valore è presente;
 	}
 	else if(valore < root->getValore()){//se il valore inserito è minore del valore del nodo
-		ricerca(root->getSx(), valore);//chiamo lafunzione ricorsiva sul nodo di sinistra;
+		ricerca(root->getSx(), valore);//chiamo la funzione ricorsiva sul nodo di sinistra;
 	}
 	else {//se invece è maggiore
 		ricerca(root->getDx(), valore);//la chiamo su quello di destra;
 	}
-
+	
 
 }
 
